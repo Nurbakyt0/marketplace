@@ -3,9 +3,11 @@ package org.example;
 import org.example.HibernateUtil.DatabaseSave;
 import org.example.cars.Car;
 import org.example.cars.compact_cars.CityCars;
+import org.example.cars.compact_cars.CityCarsBuilder;
 import org.example.cars.compact_cars.SubcompactCar;
 import org.example.cars.compact_cars.Superminis;
 import org.example.cars.luxury_cars.EntryLevelCar;
+import org.example.cars.luxury_cars.EntryLevelCarBuilder;
 import org.example.cars.luxury_cars.HighEndCar;
 import org.example.cars.luxury_cars.MidRangeCar;
 import org.example.cars.midsize_cars.ExecutiveCar;
@@ -81,18 +83,171 @@ public class Main {
         System.out.println("Deleted successfully");
         mainMenu();
     }
+
+    static void enterObject(){
+        System.out.println("1. enterCityCar.\n2. enterEnryLevelCar.\n3. Выйти");
+        int option = scan.nextInt();
+        switch (option){
+            case 1:
+                enterCityCar(new CityCarsBuilder());
+                break;
+            case 2:
+                enterEnryLevelCar(new EntryLevelCarBuilder());
+            case 3:
+                mainMenu();
+        }
+    }
     static void mainMenu() {
-        System.out.println("1. Вывести список машины.\n2. Удалить объект с базы данных.\n3. Выйти");
+        System.out.println("1. Вывести список машины.\n2. Удалить объект с базы данных.\n3. Дабавит объект в базы данных\n4. Выйти");
         int number = scan.nextInt();
         switch(number) {
             case 1:
                 printOut();
                 break;
             case 2:
-                deleteObject();
-                break;
+                System.out.println("ВЫ ХОТИТЕ УДАЛИТ ОБЪЕКТ?\n 1 - YES\n 2 - No");
+                int number1 = scan.nextInt();
+                switch (number1){
+                    case 1:
+                        deleteObject();
+                    case 2:
+                      mainMenu();
+                }
+
             case 3:
+                enterObject();
+                break;
+            case 4:
                 break;
         }
     }
-}
+
+    public static void enterCityCar(CityCarsBuilder cityCarsBuilder){
+        System.out.println("1. Model.\n2. Make.\n3. Year.\n4. Number_of_seats\n5. Colour\n6. Price\n7. Engine_displacement\n8. Dovodchik\n9. Enter object\n10. Выйти");
+
+        int option = scan.nextInt();
+        switch (option){
+            case 1:
+              String model = scan.next();
+              cityCarsBuilder.setModel(model);
+              break;
+            case 2:
+                String make = scan.next();
+                cityCarsBuilder.setMake(make);
+                break;
+            case 3:
+                int year = scan.nextInt();
+                cityCarsBuilder.setYear(year);
+                break;
+            case 4:
+                int number_of_seats = scan.nextInt();
+                cityCarsBuilder.setNumber_of_seats(number_of_seats);
+                break;
+            case 5:
+                String colour = scan.next();
+                cityCarsBuilder.setColour(colour);
+                break;
+            case 6:
+                int price = scan.nextInt();
+                cityCarsBuilder.setPrice(price);
+                break;
+            case 7:
+                String engine_displacement = scan.next();
+                cityCarsBuilder.setEngine_displacement(engine_displacement);
+                break;
+            case 8:
+                String dovodchik = scan.next();
+                cityCarsBuilder.setDovodchik(dovodchik);
+                break;
+            case 9:
+                CityCars cityCars = cityCarsBuilder.build();
+                DatabaseSave.save(cityCars);
+                cityCars.print();
+                break;
+            case 10:
+                mainMenu();
+                return;
+        }
+        enterCityCar(cityCarsBuilder);
+    }
+
+    public static void enterEnryLevelCar(EntryLevelCarBuilder entryLevelCarBuilder){
+        System.out.println("1. Model.\n2. Make.\n3. Year.\n4. Number_of_seats\n5. Colour\n6. Price\n7. Engine_displacement\n8. Panorama\n9. Enter object\n10. Выйти");
+
+        int option = scan.nextInt();
+        switch (option){
+            case 1:
+                String model = scan.next();
+                entryLevelCarBuilder.setModel(model);
+                break;
+            case 2:
+                String make = scan.next();
+                entryLevelCarBuilder.setMake(make);
+                break;
+            case 3:
+                int year = scan.nextInt();
+                entryLevelCarBuilder.setYear(year);
+                break;
+            case 4:
+                int number_of_seats = scan.nextInt();
+                entryLevelCarBuilder.setNumber_of_seats(number_of_seats);
+                break;
+            case 5:
+                String colour = scan.next();
+                entryLevelCarBuilder.setColour(colour);
+                break;
+            case 6:
+                int price = scan.nextInt();
+                entryLevelCarBuilder.setPrice(price);
+                break;
+            case 7:
+                String engine_displacement = scan.next();
+                entryLevelCarBuilder.setEngine_displacement(engine_displacement);
+                break;
+            case 8:
+                String panorama = scan.next();
+                entryLevelCarBuilder.setPanorama(panorama);
+                break;
+            case 9:
+                EntryLevelCar entryLevelCar = entryLevelCarBuilder.build();
+                DatabaseSave.save(entryLevelCar);
+                entryLevelCar.print();
+                break;
+            case 10:
+                mainMenu();
+                return;
+            }
+        enterEnryLevelCar(entryLevelCarBuilder);
+        }
+
+    }
+
+
+
+
+
+
+//    static void createObject(){
+//        System.out.println("1. Laptop.\n2. Monoblock.\n3.Keyboard.\n4.Monitor.\n5.Mouse.\n6. Выйти");
+//        int number = scan.nextInt();
+//        switch(number) {
+//            case 1:
+//                laptopCreator(new LaptopBuilder());
+//                break;
+//            case 2:
+//                monoblockCreator(new MonoblockBuilder());
+//                break;
+//            case 3:
+//                keyboardCreator(new KeyboardBuilder());
+//                break;
+//            case 4:
+//                monitorCreator(new MonitorBuilder());
+//                break;
+//            case 5:
+//                mouseCreator(new MouseBuilder());
+//                break;
+//            case 6:
+//                return;
+//        }
+//    }
+//}
