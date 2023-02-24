@@ -1,7 +1,6 @@
 package org.example.cars.compact_cars;
 
 import jakarta.persistence.Entity;
-
 @Entity
 
 public class CityCars extends CompactCars {

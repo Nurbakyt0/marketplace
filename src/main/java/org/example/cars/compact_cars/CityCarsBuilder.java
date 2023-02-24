@@ -58,6 +58,4 @@ public class CityCarsBuilder implements ICityCars {
     public CityCars build() {
         return cityCars;
     }
-
-
 }

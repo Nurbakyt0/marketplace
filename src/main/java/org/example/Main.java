@@ -98,14 +98,14 @@ public class Main {
         }
     }
     static void mainMenu() {
-        System.out.println("1. Вывести список машины.\n2. Удалить объект с базы данных.\n3. Дабавит объект в базы данных\n4. Выйти");
+        System.out.println("1. Вывести список машины.\n2. Удалить объект с базы данных.\n3. Добавить объект в базы данных\n4. Выйти");
         int number = scan.nextInt();
         switch(number) {
             case 1:
                 printOut();
                 break;
             case 2:
-                System.out.println("ВЫ ХОТИТЕ УДАЛИТ ОБЪЕКТ?\n 1 - YES\n 2 - No");
+                System.out.println("ВЫ ХОТИТЕ УДАЛИТЬ ОБЪЕКТ?\n 1 - Да\n 2 - Нет");
                 int number1 = scan.nextInt();
                 switch (number1){
                     case 1:
@@ -221,33 +221,3 @@ public class Main {
         }
 
     }
-
-
-
-
-
-
-//    static void createObject(){
-//        System.out.println("1. Laptop.\n2. Monoblock.\n3.Keyboard.\n4.Monitor.\n5.Mouse.\n6. Выйти");
-//        int number = scan.nextInt();
-//        switch(number) {
-//            case 1:
-//                laptopCreator(new LaptopBuilder());
-//                break;
-//            case 2:
-//                monoblockCreator(new MonoblockBuilder());
-//                break;
-//            case 3:
-//                keyboardCreator(new KeyboardBuilder());
-//                break;
-//            case 4:
-//                monitorCreator(new MonitorBuilder());
-//                break;
-//            case 5:
-//                mouseCreator(new MouseBuilder());
-//                break;
-//            case 6:
-//                return;
-//        }
-//    }
-//}

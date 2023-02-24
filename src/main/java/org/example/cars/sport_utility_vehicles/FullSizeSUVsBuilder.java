@@ -47,7 +47,7 @@ public class FullSizeSUVsBuilder implements IFullSizeSUVs {
     }
 
     @Override
-    public FullSizeVans builld() {
+    public FullSizeVans build() {
         return fullSizeVans;
     }
 }

@@ -12,7 +12,6 @@ public interface IPremiumCar {
     IPremiumCar setPrice(int price);
     IPremiumCar setEngine_displacement(String engine_displacement);
     IPremiumCar setPassenger_space(int passenger_space);
-    PremiumCar builld();
-
+    PremiumCar build();
 
 }

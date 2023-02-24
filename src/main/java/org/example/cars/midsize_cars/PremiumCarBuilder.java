@@ -54,7 +54,7 @@ public class PremiumCarBuilder implements IPremiumCar {
     }
 
     @Override
-    public PremiumCar builld() {
+    public PremiumCar build() {
         return premiumCar;
     }
 }

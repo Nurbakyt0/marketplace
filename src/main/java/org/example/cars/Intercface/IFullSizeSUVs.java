@@ -12,5 +12,5 @@ public interface IFullSizeSUVs {
     IFullSizeSUVs setPrice(int price);
     IFullSizeSUVs setEngine_displacement(String engine_displacement);
     IFullSizeSUVs setKarkas_weight(int karkas_weight);
-    FullSizeVans builld();
+    FullSizeVans build();
 }

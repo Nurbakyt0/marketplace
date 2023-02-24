@@ -13,5 +13,4 @@ public interface ICityCars {
     ICityCars setEngine_displacement(String engine_displacement);
     ICityCars setDovodchik(String dovodchik);
     CityCars build();
-
 }
